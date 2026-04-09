@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GivSelf — Self-Hosted Home Energy Management</title>
+  <meta name="description" content="Replace cloud-dependent energy portals with a self-hosted system that communicates directly with your GivEnergy inverter.">
+  <style>
+    :root { --bg: #0F172A; --card: #1E293B; --border: #334155; --text: #F8FAFC; --muted: #94A3B8; --accent: #3B82F6; --solar: #FBBF24; --battery: #22C55E; --grid: #EF4444; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 32px; }
+    .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: 1rem; font-weight: 600; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.9; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+
+    /* Screenshots */
+    .screenshots { padding: 40px 0; }
+    .screenshot-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .screenshot-grid img { width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+    .screenshot-grid .mobile-row { display: flex; gap: 24px; justify-content: center; }
+    .screenshot-grid .mobile-row img { width: 250px; border-radius: 12px; }
+    @media (min-width: 768px) { .screenshot-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* Features */
+    .features { padding: 60px 0; }
+    .features h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 40px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .feature h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .feature p { color: var(--muted); font-size: 0.9rem; }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 12px; }
+
+    /* Quick Start */
+    .quickstart { padding: 60px 0; }
+    .quickstart h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 40px; }
+    .code-block { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; overflow-x: auto; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+    .code-block .comment { color: #64748B; }
+    .code-block .cmd { color: var(--text); }
+
+    /* Architecture */
+    .architecture { padding: 60px 0; }
+    .architecture h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 16px; }
+    .architecture p { text-align: center; color: var(--muted); margin-bottom: 32px; }
+    .repo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .repo { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .repo h3 { font-size: 1rem; margin-bottom: 4px; }
+    .repo p { color: var(--muted); font-size: 0.85rem; }
+
+    /* Footer */
+    footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1><span>GivSelf</span></h1>
+      <p>Self-hosted home energy management system. Replace cloud-dependent portals with direct local communication to your GivEnergy inverter.</p>
+      <div class="hero-buttons">
+        <a href="#quickstart" class="btn btn-primary">Get Started</a>
+        <a href="https://github.com/GivSelf" class="btn btn-secondary">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="screenshots">
+    <div class="container">
+      <div class="screenshot-grid">
+        <img src="images/dashboard.png" alt="GivSelf Dashboard — live power flow with animated energy paths">
+        <img src="images/analytics.png" alt="GivSelf Analytics — stacked bar chart with solar forecast overlay">
+        <img src="images/schedules.png" alt="GivSelf Schedules — battery mode and charge/discharge slots">
+        <img src="images/settings.png" alt="GivSelf Settings — inverter connection and API configuration">
+      </div>
+      <div style="margin-top: 32px;">
+        <div class="screenshot-grid mobile-row">
+          <img src="images/dashboard-mobile.png" alt="GivSelf Mobile Dashboard">
+          <img src="images/analytics-mobile.png" alt="GivSelf Mobile Analytics">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Live Monitoring</h3>
+          <p>Real-time power flow with animated SVG diagram. See solar generation, battery charge/discharge, grid import/export, and house consumption updated every 10 seconds via WebSocket.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h3>Energy Analytics</h3>
+          <p>Half-hourly, daily, and monthly energy flow charts from GivEnergy Cloud API. Pie chart breakdown by perspective (Home, Solar, Battery). Date navigation with full history.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌤️</div>
+          <h3>Solar Forecasting</h3>
+          <p>Dual forecast sources — Forecast.Solar (free, every 30 min) and Solcast (10 calls/day). Yellow dashed overlay on analytics charts shows predicted vs actual generation.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔋</div>
+          <h3>Battery Control</h3>
+          <p>ECO, Timed Demand, and Timed Export modes. 10 charge and 10 discharge time slots. Force charge/export with countdown. Reserve SOC and target SOC sliders.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile App</h3>
+          <p>Native iOS and Android app built with Expo (React Native). Same features as the web dashboard with system theme support (light/dark/auto).</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🐳</div>
+          <h3>Docker Deployment</h3>
+          <p>Single docker-compose file. TimescaleDB for time-series data. CI/CD via GitHub Actions publishes images to GHCR on every push to main.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔌</div>
+          <h3>Local Modbus TCP</h3>
+          <p>Direct communication with your inverter over the local network. No cloud dependency for live data. Ported from the GivTCP protocol implementation.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📥</div>
+          <h3>Historical Import</h3>
+          <p>Import years of historical energy flow data from the GivEnergy Cloud API. UI-driven with live progress bar. Configurable date range.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚙️</div>
+          <h3>Setup Wizard</h3>
+          <p>First-run quickstart walks through inverter connection, cloud API, and solar forecasting setup. All settings persisted to database — no .env files needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section class="quickstart" id="quickstart">
+    <div class="container">
+      <h2>Quick Start</h2>
+      <div class="code-block">
+        <div><span class="comment"># Create a docker-compose.yml with this content, then:</span></div>
+        <div><span class="cmd">docker compose pull</span></div>
+        <div><span class="cmd">docker compose up -d</span></div>
+        <div style="margin-top: 12px;"><span class="comment"># Open http://your-server:3033 and follow the setup wizard</span></div>
+      </div>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 24px;">
+        See the <a href="https://github.com/GivSelf/deploy">deploy repo</a> for the full docker-compose.yml template.
+      </p>
+
+      <h3 style="margin-bottom: 12px;">Docker Compose</h3>
+      <div class="code-block">
+        <pre><span class="comment"># docker-compose.yml</span>
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg16
+    environment:
+      POSTGRES_DB: givself
+      POSTGRES_USER: givself
+      POSTGRES_PASSWORD: <span style="color:#FBBF24">your_password</span>
+    volumes:
+      - db_data:/home/postgres/pgdata/data
+
+  server:
+    image: ghcr.io/givself/server:latest
+    depends_on: [timescaledb]
+    environment:
+      PORT: "3032"
+      DATABASE_URL: postgres://givself:<span style="color:#FBBF24">your_password</span>@timescaledb:5432/givself
+      ADAPTER_TYPE: givenergy
+      INVERTER_HOST: <span style="color:#FBBF24">your_inverter_ip</span>
+
+  web:
+    image: ghcr.io/givself/web:latest
+    ports: ["3033:3000"]
+    environment:
+      HOSTNAME: "0.0.0.0"
+      API_URL: "http://server:3032"
+      WS_URL: "ws://<span style="color:#FBBF24">your_server_ip</span>:3032"
+
+volumes:
+  db_data:</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="architecture">
+    <div class="container">
+      <h2>Architecture</h2>
+      <p>Microservice architecture with independent repos, Protobuf contracts, and CI/CD.</p>
+      <div class="repo-grid">
+        <a href="https://github.com/GivSelf/contracts" class="repo">
+          <h3>📋 contracts</h3>
+          <p>Protobuf definitions + generated TypeScript types. Buf toolchain with lint + breaking change detection.</p>
+        </a>
+        <a href="https://github.com/GivSelf/server" class="repo">
+          <h3>🖥️ server</h3>
+          <p>Fastify backend. Modbus TCP adapter, GivEnergy Cloud API, Solcast + Forecast.Solar, TimescaleDB.</p>
+        </a>
+        <a href="https://github.com/GivSelf/web" class="repo">
+          <h3>🌐 web</h3>
+          <p>Next.js 16 dashboard. Recharts analytics, animated power flow, dark/light theme, mobile responsive.</p>
+        </a>
+        <a href="https://github.com/GivSelf/mobile" class="repo">
+          <h3>📱 mobile</h3>
+          <p>Expo (React Native) app for iOS and Android. Victory Native charts, system theme support.</p>
+        </a>
+        <a href="https://github.com/GivSelf/deploy" class="repo">
+          <h3>🐳 deploy</h3>
+          <p>Docker Compose orchestration. TimescaleDB, server, web. CI builds + publishes to GHCR.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>GivSelf is not affiliated with GivEnergy Ltd. This is an independent open-source project.</p>
+      <p style="margin-top: 8px;"><a href="https://github.com/GivSelf">GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
