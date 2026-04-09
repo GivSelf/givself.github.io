@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GivSelf — Self-Hosted Home Energy Management</title>
-  <meta name="description" content="Replace cloud-dependent energy portals with a self-hosted system that communicates directly with your GivEnergy inverter.">
+  <meta name="description" content="Free, open-source alternative to the GivEnergy cloud portal. Monitor, control, and analyse your home energy system without monthly fees.">
   <style>
     :root { --bg: #0F172A; --card: #1E293B; --border: #334155; --text: #F8FAFC; --muted: #94A3B8; --accent: #3B82F6; --solar: #FBBF24; --battery: #22C55E; --grid: #EF4444; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,7 +67,8 @@
   <section class="hero">
     <div class="container">
       <h1><span>GivSelf</span></h1>
-      <p>Self-hosted home energy management system. Replace cloud-dependent portals with direct local communication to your GivEnergy inverter.</p>
+      <p style="font-size: 1rem; color: var(--solar); margin-bottom: 12px; font-weight: 600;">GivEnergy are introducing paid subscriptions for their cloud portal. Take back control.</p>
+      <p>Free, open-source alternative that runs on your own hardware. Monitor, control, and analyse your home energy system without monthly fees — communicating directly with your inverter over the local network.</p>
       <div class="hero-buttons">
         <a href="#quickstart" class="btn btn-primary">Get Started</a>
         <a href="https://github.com/GivSelf" class="btn btn-secondary">GitHub</a>
@@ -88,6 +89,30 @@
         <div class="screenshot-grid mobile-row">
           <img src="images/dashboard-mobile.png" alt="GivSelf Mobile Dashboard">
           <img src="images/analytics-mobile.png" alt="GivSelf Mobile Analytics">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="features" style="padding-bottom: 20px;">
+    <div class="container">
+      <h2>Why GivSelf?</h2>
+      <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="feature">
+          <div class="feature-icon">💰</div>
+          <h3>No Monthly Fees</h3>
+          <p>GivEnergy's cloud portal is moving to a paid subscription model. GivSelf is completely free and open-source — run it on any hardware you already own.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏠</div>
+          <h3>Your Data, Your Server</h3>
+          <p>All data stays on your local network. No cloud dependency for monitoring or controlling your inverter. Works even if the internet goes down.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔓</div>
+          <h3>No Lock-In</h3>
+          <p>Open-source with a hardware adapter pattern. Built for GivEnergy today, extensible to other inverter brands tomorrow. You own your energy data forever.</p>
         </div>
       </div>
     </div>
