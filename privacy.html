@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GivSelf — Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0F172A; color: #F8FAFC; line-height: 1.8; max-width: 720px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 { font-size: 1.3rem; margin-top: 32px; color: #94A3B8; }
+    p, li { color: #CBD5E1; font-size: 0.95rem; }
+    a { color: #3B82F6; }
+    .date { color: #64748B; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="date">Last updated: April 2026</p>
+
+  <h2>Overview</h2>
+  <p>GivSelf is a self-hosted application. All data processing happens on your own server and devices. We do not operate any cloud services, collect any data, or have access to your information.</p>
+
+  <h2>Data Collection</h2>
+  <p>The GivSelf app and server do not collect, transmit, or store any personal data on external servers. Specifically:</p>
+  <ul>
+    <li><strong>No analytics or tracking</strong> — We do not use any analytics services, crash reporting, or tracking pixels.</li>
+    <li><strong>No accounts</strong> — GivSelf does not require user accounts or registration.</li>
+    <li><strong>No cloud storage</strong> — All energy data, settings, and credentials are stored locally on your self-hosted server's database.</li>
+  </ul>
+
+  <h2>Data Stored on Your Server</h2>
+  <p>The GivSelf server, which you host and control, stores:</p>
+  <ul>
+    <li>Energy metrics from your inverter (power readings, energy totals)</li>
+    <li>Configuration settings (inverter connection details, API keys you provide)</li>
+    <li>Solar forecast data from third-party services you choose to enable (Solcast, Forecast.Solar)</li>
+    <li>Historical energy flow data imported from the GivEnergy Cloud API</li>
+  </ul>
+  <p>This data never leaves your server unless you explicitly configure third-party integrations.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>GivSelf can optionally connect to the following services if you provide API credentials:</p>
+  <ul>
+    <li><strong>GivEnergy Cloud API</strong> — To fetch historical energy data and system information. Subject to <a href="https://givenergy.cloud/terms">GivEnergy's terms</a>.</li>
+    <li><strong>Solcast</strong> — For solar generation forecasts. Subject to <a href="https://solcast.com/privacy-policy">Solcast's privacy policy</a>.</li>
+    <li><strong>Forecast.Solar</strong> — For solar generation estimates. Your approximate location (latitude/longitude) is sent to their API. Subject to <a href="https://forecast.solar/privacy">Forecast.Solar's privacy policy</a>.</li>
+  </ul>
+
+  <h2>Mobile App</h2>
+  <p>The GivSelf mobile app connects only to your self-hosted server. The server URL is stored locally on your device. No data is sent to GivSelf developers or any other party.</p>
+
+  <h2>Local Network Access</h2>
+  <p>The app requires local network access to communicate with your GivSelf server. This permission is used solely for connecting to the server you configure in the app's settings.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>GivSelf is not directed at children under 13 and does not knowingly collect any personal information.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the updated version will be posted at this URL. Since GivSelf is open-source, you can always review the source code to verify our privacy practices.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about this privacy policy, open an issue on <a href="https://github.com/GivSelf">GitHub</a>.</p>
+</body>
+</html>
